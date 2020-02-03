@@ -1,0 +1,12 @@
+{
+  "name": "takenaka/composer-test",
+  "authors": [
+    {
+      "name": "Yuki Takenaka",
+      "email": "yuki.takenaka@andco.group"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "^2.29"
+  }
+}
