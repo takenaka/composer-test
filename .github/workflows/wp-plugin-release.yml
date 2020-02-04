@@ -25,3 +25,19 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
+
+      - name: Pack source code in zip file
+        run: |
+          mkdir dist
+          cp -r index.php vendor/ dist/
+          zip -j -r release dist
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: release.zip
+          asset_name: source.zip
+          asset_content_type: application/zip
