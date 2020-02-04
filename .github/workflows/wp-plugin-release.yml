@@ -1,9 +1,6 @@
 name: Wordpress plugin release
 
 on:
-  push:
-    branches: 
-      - master
   release:
     types: 
       - published
@@ -15,9 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
