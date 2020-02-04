@@ -29,7 +29,7 @@ jobs:
       - name: Pack source code in zip file
         run: |
           mkdir dist
-          cp -r index.php vendor dist/
+          rsync -a ./ dist/ --exclude 'dist' --exclude '.git'
           zip -r release dist
 
       - name: Upload release asset
