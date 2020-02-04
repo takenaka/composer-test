@@ -29,8 +29,7 @@ jobs:
       - name: Pack source code in zip file
         run: |
           mkdir dist
-          ls -la
-          cp -r index.php vendor/ dist/
+          cp -r index.php vendor dist/
           zip -j -r release dist
 
       - name: Upload release asset
