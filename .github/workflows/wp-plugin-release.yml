@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir dist
           cp -r index.php vendor dist/
-          zip -j -r release dist
+          zip -r release dist
 
       - name: Upload release asset
         uses: actions/upload-release-asset@v1.0.1
