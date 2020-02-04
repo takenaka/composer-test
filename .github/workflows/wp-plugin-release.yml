@@ -2,7 +2,7 @@ name: Wordpress plugin release
 
 on:
   release:
-    types: [published]
+    types: [created, published]
 
 jobs:
   build:
